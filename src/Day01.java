@@ -32,6 +32,28 @@ public class Day01 {
     return zeroCount;
   }
 
+  public static int solvePart1(List<String> rotations) {
+    int position = 50;
+    int zeroCount = 0;
+
+    for (String rotation: rotations) {
+      char direction = rotation.charAt(0);
+      int distance = Integer.parseInt(rotation.substring(1));
+      if (direction == 'L') {
+        // Negative modulo is weird in java, this solves it in a one liner rather than an if position < 0 approach
+        position = ((position - distance) % 100 + 100) % 100;
+      } else {
+        position = (position + distance) % 100;
+      }
+
+      if (position == 0) {
+        zeroCount++;
+      }
+    }
+
+    return zeroCount;
+  }
+
   public static int countZeroCrossings(int start, int distance, char direction) {
     int crossings = 0;
 
