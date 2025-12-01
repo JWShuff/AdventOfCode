@@ -12,24 +12,42 @@ public class Day01 {
     int position = 50;
     int zeroCount = 0;
 
+    ///  Count every time the dials *crosses* 0
     for (String rotation : rotations) {
-      char direction =  rotation.charAt(0);
+      char direction = rotation.charAt(0);
       int distance = Integer.parseInt(rotation.substring(1));
-
+//      System.out.println("Rotation: " + rotation + " from " + position + " adds " + countZeroCrossings(position, distance, direction) + " crossings");
+      zeroCount += countZeroCrossings(position, distance, direction);
+      // Update position for next rotation
       if (direction == 'L') {
         position = (position - distance) % 100;
-        // negative modulo gets a little weird
         if (position < 0) {
           position += 100;
         }
-      } else { //The "R" case
+      } else { // 'R'
         position = (position + distance) % 100;
       }
-      if (position == 0) {
-        zeroCount++;
-      }
+//      System.out.println("Final position: " + position);
     }
     return zeroCount;
+  }
+
+  public static int countZeroCrossings(int start, int distance, char direction) {
+    int crossings = 0;
+
+    if (direction == 'R') {
+      int firstZero = 100 - start;
+      if (distance >= firstZero) {
+        crossings = 1 + (distance - firstZero) / 100;
+      }
+    } else { // 'L'
+      int firstZero = (start == 0) ? 100 : start;
+      if (distance >= firstZero) {
+        crossings = 1 + (distance - firstZero) / 100;
+      }
+    }
+
+    return crossings;
   }
 
   public static List<String> readInput(String filename)  throws IOException {
