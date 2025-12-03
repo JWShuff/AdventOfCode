@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Day01 {
   public static void main(String[] args) throws IOException {
-    List<String> rotations = readInput("./src/rotations.txt");
+    List<String> rotations = readInput("./src/Day1Input.txt");
     int password = solve(rotations);
     System.out.println("Password: " + password);
   }
