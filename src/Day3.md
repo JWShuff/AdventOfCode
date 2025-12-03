@@ -6,7 +6,8 @@ When you get to the main elevators, however, you discover that each one has a re
 to have fried them. I'll try to get them online soon."
 
 You explain your need to get further underground. "Well, you could at least take the escalator down to the printing 
-department, not that you'd get much further than that without the elevators working. That is, you could if the escalator weren't also offline."
+department, not that you'd get much further than that without the elevators working. That is, you could if the escalator 
+weren't also offline."
 
 "But, don't worry! It's not fried; it just needs power. Maybe you can get it running while I keep working on the 
 elevators."
@@ -26,10 +27,12 @@ batteries 2 and 4, the bank would produce 24 jolts. (You cannot rearrange batter
 You'll need to find the largest possible joltage each bank can produce. In the above example:
 
 In 987654321111111, you can make the largest joltage possible, 98, by turning on the first two batteries.
-In 811111111111119, you can make the largest joltage possible by turning on the batteries labeled 8 and 9, producing 89 jolts.
+In 811111111111119, you can make the largest joltage possible by turning on the batteries labeled 8 and 9, producing 89
+jolts.
 In 234234234234278, you can make 78 by turning on the last two batteries (marked 7 and 8).
 In 818181911112111, the largest joltage you can produce is 92.
-The total output joltage is the sum of the maximum joltage from each bank, so in this example, the total output joltage is 98 + 89 + 78 + 92 = 357.
+The total output joltage is the sum of the maximum joltage from each bank, so in this example, the total output joltage 
+is 98 + 89 + 78 + 92 = 357.
 
 There are many batteries in front of you. Find the maximum joltage possible from each bank; what is the total output 
 joltage?
